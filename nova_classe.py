@@ -1,4 +1,4 @@
-from valores import todas
+from Valores import todas
 
 def msg():
     print("*" * 40)
