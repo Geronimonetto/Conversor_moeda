@@ -22,10 +22,20 @@ class dinheiro:
 
         print()
         modelando(todas)
-        self.converter = float(input("Escolha a moeda de conversão: "))
-        if self.converter <1 or self.converter >4:
-            self.converter = float(input("Escolha um número entre 1 e 4: "))
-        print()
+        self.conversao()
+
+    def conversao(self):
+        self.converter = input("Escolha a moeda de conversão: ").strip()
+        if self.converter.isdecimal():
+            self.converter = float(self.real)
+        else:
+            while not self.converter.isnumeric():
+                self.converter = input("Escolha a moeda de conversão: ").strip()
+                if self.converter.isdecimal():
+                    self.converter = float(self.converter)
+                    break
+                else:
+                    continue
         self.alterar()
 
     def saida(self):
@@ -65,7 +75,8 @@ class dinheiro:
             print(f'Aguarde enquanto convertemos...')
             sleep(2)
             print(f'\nO valor R${self.real:.2f} em ¥ (Iene) = ¥{self.real * valor[2]:.2f}\n'.replace('.',','))
-
+        if self.converter <0 or self.converter >4:
+            self.conversao()
         self.saida()
 
 
