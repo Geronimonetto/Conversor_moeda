@@ -6,7 +6,7 @@ Linguagem: Python
 '''
 
 
-from Classes import dinheiro
+from classes.Classes import dinheiro
 
 if __name__ == '__main__':
     inicio = dinheiro()
