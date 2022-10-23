@@ -23,7 +23,7 @@ class dinheiro:
         print()
         modelando(todas)
         self.converter = float(input("Escolha a moeda de conversão: "))
-        if self.converter <1 or self.converter >4 or not self.converter.isnumeric():
+        if self.converter <1 or self.converter >4:
             self.converter = float(input("Escolha um número entre 1 e 4: "))
         print()
         self.alterar()
